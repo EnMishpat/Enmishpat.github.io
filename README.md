@@ -1,6 +1,6 @@
 
 # Enmishpat, Who am I? ![WakeTech](https://github.com/EnMishpat/Enmishpat.github.io/assets/137240762/99da85d1-8e99-4829-b792-ee7c337ac88d) 
-Creating a github page for my Wake Tech class. 
+Creating a GitHub page for my Wake Tech class. 
 I really like to learn new and fun things. 
 I like to tie knots.
 If you have any questions for me, please feel free to ask. 
