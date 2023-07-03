@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Video Store Product Page</title>
+        <style>
+            header,
+            nav,
+            section,
+            footer{
+                background: #659494;
+                border-radius:5px;
+                color: white;
+                font-family: arial, helvetica, sans-serif;
+                font-size: 30px;
+                text-align: center;
+                border: 1px solid gray;
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+            header:before,
+            Nav:before,
+            footer:before{
+                content:'<';
+            }
+            header:after,
+            nav:after,
+            footer:after{
+                content:'>'
+            }
+            section{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+            }
+            section div{
+                border:2px solid white;
+                padding: 30px;
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>Header</header>
+        <nav>Nav</nav>
+        <section>
+            <div>Product 1</div>
+            <div>Product 2</div>
+            <div>Product 3</div>
+            <div>Product 4</div>
+            <div>Product 5</div>
+            <div>Product 6</div>
+            <div>Product 7</div>
+            <div>Product 8</div>
+        </section>
+        <footer>Footer</footer>
+    </body>
+</html>
