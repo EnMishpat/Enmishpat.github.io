@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Online Clothig Store Home Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1">
+        <style type="text/css">
+            header,
+            nav,
+            aside,
+            section,
+            footer{
+                background: #659494;
+                border-radius: 5px;
+                color: white;
+                font-family: arial, helvetica, sans-serif;
+                text-align: center;
+                border: 1px solid gray;
+                padding:20px;
+                margin-bottom:25px;                
+            }
+            header:before,
+            nav:before,
+            footer:before{
+                content:'<';
+            }
+            header:after,
+            nav:after,
+            footer:after{
+                content: '>';
+            }
+            section{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+            }
+            section div{
+                border: 1px solid white;
+                padding: 30px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>Header</header>
+        <nav>Nav</nav>
+        <aside>Image Carousel</aside>
+        <section>
+            <div>Product 1</div>
+            <div>Product 2</div>
+            <div>Product 3</div>
+            <div>Product 4</div>
+        </section>
+        <footer>Footer</footer>
+        </body>
+</html>
