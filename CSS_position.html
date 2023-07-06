@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+        <title>CSS Positioning Example</title>
+        <style>
+            main{
+                position: relative;
+            }
+            section{
+                border: 1px solid black;
+                display: inline-block;
+                width: 200px;
+            }
+            .section1{
+                background-color: aqua;
+                top: 10px;
+                left:10px;
+            }
+            .section2{
+                position: relative;
+                background-color: blue;
+                top: -2px;
+                left:-2px;
+            }
+            .section3{
+                position: fixed;
+                background-color: green;
+                top: 75%;
+                right:10%;
+                border-radius: 50%;
+            }
+            .section4{
+                position:absolute;
+                background-color: red;
+                top: 75%;
+                right:10%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section class="section1">
+                <h1>Section 1</h1>
+            </section>
+            <section class="section2">
+                <h1>Section 2</h1>
+            </section>
+            <section class="section3">
+                <h1>Chat Now</h1>
+            </section>
+            <section class="section4">
+                <h1>Section 4</h1>
+            </section>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe ducimus quisquam qui dolores a! Ab molestiae consequuntur voluptas atque similique libero tenetur quia ipsum cum, accusantium culpa eum. Odit, voluptatum?</p>
+        </main>
+    </body>
+</html>

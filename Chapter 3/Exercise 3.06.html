@@ -37,7 +37,55 @@
                 text-decoration: underline;
             }
             .breadcrumb {
-                display: flex
+                display: flex;
+                list-style: none;
+            }
+            .breadcrumb li:after{
+                content:'/';
+                margin-left: 20px;
+            }
+            .breadcrumb li:last-child:after{
+                content:""
+            }
+            .breadcrumb a{
+                color:black;
+                text-decoration: none;
+            }
+            .breadcrumb a:hover{
+                text-decoration: underline;
+            }
+            .intro {
+                margin: 30px 0;
+                padding-left: 10px;
+                width: 50%;
+            }
+            .intro h1{
+                margin-bottom: 15px;
+            }
+            .intro p{
+                line-height: 1.5;
+            }
+            .product-card{
+                display: inline-block;
+                border: 1px solid black;
+                padding: 15px;
+                margin: 10px;
+            }
+            .product-card a{
+                color: black;
+                text-decoration: none;
+            }
+            .product-card img{
+                width: 100%;
+            }
+            .product-card h2{
+                margin: 30px 0 15;
+            }
+            .product-card p{
+                line-height: 1.5;
+            }
+            .orginal-price{
+                color: gray;
             }
         </style>
     </head>
