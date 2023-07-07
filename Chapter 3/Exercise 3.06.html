@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta name="viewprot" content="width=device-width, initial-scale=1">
-        <title>Exercise 3.06</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Video Store Home Page</title>
         <style type="text/css">
             *{
                 margin: 0;
@@ -26,6 +27,11 @@
                 grid-template-columns: auto auto auto auto;
                 margin-bottom: 30px;
             }
+            nav ul {
+                display: flex;
+                list-style: none;
+            }
+ 
             nav a{
                 color: black;
                 font-weight: bold;
@@ -86,7 +92,74 @@
             }
             .orginal-price{
                 color: gray;
+                text-transform: uppercase;
+            }
+            .current-price span{
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            .savings{
+                color: green;
             }
         </style>
     </head>
+    <body>
+        <header>
+            <img src="https://dummyimage.com/200x100/000/fff&text=Logo" alt="" />
+            <nav>
+                <ul>
+                    <li><a href="">Videos to rent</a></li>
+                    <li><a href="">Videos to buy</a></li>
+                    <li><a href="">Used DVDs</a></li>
+                    <li><a href="">Offers</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <ol class="breadcrumb">
+                <li><a href="">Home</a></li>
+                <li><a href="">Used DVDs</a></li>
+                <li><a href="">Less than &pound;10</a></li>
+            </ol>
+        </section>
+        <section class="intro">
+            <h1>Videos Less than &pound10</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis culpa dolor totam deserunt nam dignissimos natus laboriosam, perferendis architecto sequi, blanditiis incidunt ducimus quam cupiditate ea temporibus consectetur laborum. Magni.</p>
+        </section>
+
+        <section class="product-cards">
+            <div class="product-card">
+                <img src="https://dummyimage.com/300x300/7EC0EE/000&text=Product+Image+1" alt="" />
+                <h2><a href="">Video Title 1</a></h2>
+                <p class="original-price">RRP: &pound;18.99</p>
+                <p class="current-price">Price you Pay<span>&pound;9.99</span></p>
+                <p class="savings">Your Savings &pound;9</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://dummyimage.com/300x300/7EC0EE/000&text=Product+Image+2" alt="" />
+                <h2><a href="">Video Title 2</a></h2>
+                <p class="original-price">RRP: &pound;18.99</p>
+                <p class="current-price">Price you Pay<span>&pound;9.99</span></p>
+                <p class="savings">Your Savings &pound;9</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://dummyimage.com/300x300/7EC0EE/000&text=Product+Image+3" alt="" />
+                <h2><a href="">Video Title 3</a></h2>
+                <p class="original-price">RRP: &pound;18.99</p>
+                <p class="current-price">Price you Pay<span>&pound;9.99</span></p>
+                <p class="savings">Your Savings &pound;9</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://dummyimage.com/300x300/7EC0EE/000&text=Product+Image+4" alt="" />
+                <h2><a href="">Video Title 4</a></h2>
+                <p class="original-price">RRP: &pound;18.99</p>
+                <p class="current-price">Price you Pay<span>&pound;9.99</span></p>
+                <p class="savings">Your Savings &pound;9</p>
+            </div>
+        </section>
+        
+    </body>
 </html>
