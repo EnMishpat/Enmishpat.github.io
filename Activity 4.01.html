@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="desciption" content="Search for a property for sale in  London">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Proper for sale in London</h1>
+        <form class="searchForm" action="" method="post">
+            <div>
+                <label for="searchRadius">Search radius:</label>
+                <select id="searchRadius" name="searchRadius" placeholder="This area only">
+                    <option value="arnosGrove">Arnos Grove</option>
+                    <option value="balham">Balham</option>
+                    <option value="bankside">Bankside</option>
+                    <option value="blackwall">Blackwall</option>
+                </select>
+            </div>
+            <div>
+                <label for="priceRange">Price range:</label>
+                <select id="priceRange" name="priceRange" placeholder="Any">
+                    <option value="10to500">$10-50,000</option>
+                    <option value="50to100">$50-100,000</option>
+                    <option value="100to150">$100-150,000</option>
+                    <option value="150to200">$150-200,000</option>
+                    <option value="200to250">200-250,000</option>
+                    <option value="250to300">$250-300,000</option>
+                    <option value="300to350">$300-350,000</option>
+                    <option value="350to400">$350-400,000</option>
+                </select>
+            </div>
+            <div>
+                <label for="bedrooms">Bedrooms:</label>
+                <select id="bedrooms" name="bedrooms" placeholder="Any">
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                    <option value="5">5+</option>
+                    <option value="6">6+</option>
+                </select>
+            </div>
+            <div>
+                <label for="propertytype">Property Type:</label>
+                <select id="propertyType" name="propertyType" placeholder="Any">
+                    <option value="condo">Condo</option>
+                    <option value="detached">Detached</option>
+                    <option value="townHouse">Town house</option>
+                    <option value="Manufactured">Manufactured</option>
+                </select>
+            </div>
+        </form>
+    </body>
+</html>
