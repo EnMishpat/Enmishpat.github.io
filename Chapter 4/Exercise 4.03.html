@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="sign up for this video store account">
+        <title>Signup Form</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            fieldset{
+                border:0;
+            }
+            fieldset>div{
+                margin-bottom: 30px;
+            }
+            label{
+                display: block;
+                margin-bottom:10px;
+            }
+            label span{
+                color: red;
+            }
+            input{
+                padding: 10px;
+                width:200px;
+            }
+            input:invalid{
+                border:2px solid red;
+            }
+            .checkBox input{
+                float: left;
+                margin-right:10px;
+                width: auto;
+            }
+            button{
+                background:green;
+                border:0;
+                color: white;
+                width: 224px;
+                padding: 10px;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Create a new account</h1>
+        <form action="" method="post">
+            <fieldset>
+                <div>
+                    <label for="firstName">First Name:<span>*</span></label>
+                    <input id="firstName" name="firstname" type="text" required>
+                </div>
+                <div>
+                    <label for="lastName">Last Name:<span>*</span></label>
+                    <input id="lastName" name="lastName" type="text" required>
+                </div>
+                <div class="checkBox">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                    <label for="newsletter">Sign up for newsletter</label>
+                </div>
+                <div>
+                    <label for="email">Email:<span>*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Password:<span>*</span></label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Create new account</button>
+            </fieldset>
+        </form>
+
+    </body>
+</html>
