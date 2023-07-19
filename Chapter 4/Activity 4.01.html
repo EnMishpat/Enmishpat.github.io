@@ -5,27 +5,105 @@
         <meta charset="UTF-8">
         <meta name="desciption" content="Search for a property for sale in  London">
         <style>
-            *{
-                margin:0;
-                padding:0;
+           body{
+            font-family:Arial, Helvetica, sans-serif
+           }
+          
+            fieldset{
+                border: 0;
+                padding: 0;
+                width:900px
             }
+           fieldset>div{
+                margin-bottom: 30px;
+            }
+            label{
+                display: block;
+                margin-bottom:10px;
+            }
+            input,select{
+                border: 1px solid gray;
+                padding: 10px;
+                width: 200px
+            }
+            select{
+                background: transparent;
+                border-radius:0;
+                box-shadow: none;
+                color: #666;
+                -webkit-apperance: none;
+                width: 100%
+            }
+            .select-wrapper{
+                position:relative;
+                width:100%
+            }
+            .select-wrapper:after{
+                content:'<>';
+                color: #666;
+                font-size:14px;
+                top: 8px;
+                right:0;
+                transform: rotate(90deg);
+                position: absolute;
+                z-index: -1;
+            }
+            button{
+                background: green;
+                border: 0;
+                color: white;
+                width: 224px;
+                padding: 10px;
+                text-transform: uppercase;
+                float: right;
+                margin-right: 30px;
+            }
+            .row1, .row2, .item{
+                display: flex
+            }
+            .row1, .row2, .item{
+                margin-bottom: 15px;
+                margin-right: 30px;
+            }
+            .row1, .row2>div{
+                flex-basis:50%;
+            }
+            label{
+                margin-right: 15px;
+                line-height: 35px;
+                width:150px;
+            }
+            .checkbox{
+                margin-left:122px;
+                margin-right: 10px;
+                width: auto;
+            }
+            .checkbox+label{
+                width: auto;
+                line-height: 20px;
+            }
+
         </style>
     </head>
     <body>
-        <h1>Proper for sale in London</h1>
+        <h1>Property for sale in London</h1>
         <form class="searchForm" action="" method="post">
-            <div>
+           <fieldset>
+             <div class="row1">
+                <div class="item">
                 <label for="searchRadius">Search radius:</label>
-                <select id="searchRadius" name="searchRadius" placeholder="This area only">
+                <select class="select-wrapper" id="searchRadius" name="searchRadius" required>
+                    <option value="">This area only</option>
                     <option value="arnosGrove">Arnos Grove</option>
                     <option value="balham">Balham</option>
                     <option value="bankside">Bankside</option>
                     <option value="blackwall">Blackwall</option>
                 </select>
             </div>
-            <div>
+            <div class="item">
                 <label for="priceRange">Price range:</label>
-                <select id="priceRange" name="priceRange" placeholder="Any">
+                <select class="select-wrapper" id="priceRange" name="priceRange" required>
+                    <option value="">Any</option>
                     <option value="10to500">$10-50,000</option>
                     <option value="50to100">$50-100,000</option>
                     <option value="100to150">$100-150,000</option>
@@ -34,28 +112,47 @@
                     <option value="250to300">$250-300,000</option>
                     <option value="300to350">$300-350,000</option>
                     <option value="350to400">$350-400,000</option>
-                </select>
-            </div>
-            <div>
+                    </select>
+                 </div>
+                <div class="item">
                 <label for="bedrooms">Bedrooms:</label>
-                <select id="bedrooms" name="bedrooms" placeholder="Any">
+                 <select class="select-wrapper"  id="bedrooms" name="bedrooms" required>
+                    <option value="">Any</option>
                     <option value="1">1+</option>
                     <option value="2">2+</option>
                     <option value="3">3+</option>
                     <option value="4">4+</option>
                     <option value="5">5+</option>
                     <option value="6">6+</option>
-                </select>
+                 </select>
+                </div>
             </div>
-            <div>
+            <div class="row2">
+                <div class="item">
                 <label for="propertytype">Property Type:</label>
-                <select id="propertyType" name="propertyType" placeholder="Any">
+                <select class="select-wrapper" id="propertyType" name="propertyType" required>
+                    <option value="">Any</option>
                     <option value="condo">Condo</option>
                     <option value="detached">Detached</option>
                     <option value="townHouse">Town house</option>
                     <option value="Manufactured">Manufactured</option>
                 </select>
             </div>
-        </form>
+            <div class="item">
+                <label for="addedToSite">Added to site:</label>
+                <select class="select-wrapper" id="addedToSite" name="addedToSite" required>
+                    <option value="today">Today</option>
+                    <option value="thisWeek">This week</option>
+                    <option value="thisMonth">This month</option>
+                </select>
+            </div>
+            <div class="item">
+                <input class="checkbox" type="checkbox" id="soldProp" name="soldProp">
+                <label for="soldProp">Inclue sold properties</label>
+            </div>
+            </div>
+            <button type="submit">find properties</button>
+          </fieldset>
+        </form>    
     </body>
 </html>
