@@ -1,0 +1,250 @@
+header{
+    position: relative;
+    width: 1000px;
+    height: 30px;
+    margin: 0 auto;
+    background-color: lightgreen;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    
+}
+.head{
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+}
+.skull{
+    width:100px;
+    height: 100px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+}
+.eyes{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width:100%;
+    height: 30%;
+    top:10px;
+  
+}
+#lEye,#rEye{
+    width:25px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 30%;
+}
+.nose{
+    display: flex;
+    justify-content: center;
+    gap:0;
+    width: 100%;
+    height: 40%;
+    position: relative;
+}
+#lNostrile{
+    position: relative;
+    top:20px;
+    right:-10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: rgb(44, 43, 43);
+}
+#rNostrile{
+    position: relative;
+    top:20px;
+    left:-10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: rgb(44, 43, 43);
+    
+}
+#centerNose{
+    position: relative;
+    width: 15px;
+    height: 40px;
+    border: 1px solid gray;
+    background-color: rgb(44, 43, 43);
+    z-index: 1;
+}
+.mouth{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    height: 30%;
+}
+.smile{
+    position: relative;
+    top: 7px;
+    background-color: peachpuff;
+    width: 70%;
+    height: 60%;
+    border: 1px solid black;
+    border-radius: 0 0 60% 60%;
+}
+.neck{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: lightsalmon;
+    height: 40px;
+}
+#neck{
+    position: relative;
+    width: 30px;
+    height: inherit;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+}
+.torso{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap:0;
+    background-color: lightgoldenrodyellow;
+    height: 200px;
+}
+.lArm,.rArm{
+    
+    width: 100px;
+    height: inherit;
+}
+
+#lShoulder,#rShoulder{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid   black;
+    border-radius: 50%;
+    background-color: rgb(44, 43, 43);
+}
+#lShoulder{
+    float: right;
+}
+#lBicept,#rBicept{
+    position: relative;
+    clear:both;
+    width:20px;
+    height: 70px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+    
+}
+#lBicept{
+    left: 53px;
+    bottom: 5px ;
+    transform: rotate(15deg);
+}
+#rBicept{
+    left:23px;
+    bottom: 5px;
+    transform: rotate(-15deg);
+}
+#lElbow,#rElbow{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 1px solid   black;
+    border-radius: 50%;
+    background-color: rgb(44, 43, 43);
+}
+#lElbow{
+    left: 35px;
+    bottom: 7px;
+
+}
+#rElbow{
+    left: 30px;
+    bottom: 7px;
+}
+#lForarm,#rForarm{
+    position: relative;
+    width:15px;
+    height: 70px;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+}
+#lForarm{
+    left:43px;
+    bottom: 7px;
+}
+#rForarm{
+    left:38px;
+    bottom: 7px;
+}
+.belly{
+    position: relative;
+    width: 125px;
+    height: inherit;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid black;
+}
+.chestLights{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 25%;
+}
+#l1,#l2,#l3{
+    position: relative;
+    top:3px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+#l1{
+    background-color: red;
+}
+#l2{
+    background-color: white;
+}
+#l3{
+    background-color: blue;
+}
+.knobs{
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+    height: 40px;
+    position: relative;
+}
+#k1,#k2,#k3,#k4,#k5{
+    position: relative;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border:3px dashed whitesmoke;
+}
+.belt{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 15px;
+    width: inherit;
+    height: 20px;
+    }
+#beltBar{
+    position: relative;
+    width: 100px;
+    height: 15px;
+    border: 1px solid gray;
+}
+.bellowTheBelt{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(248, 85, 64, 0.628);
+}
