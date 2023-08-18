@@ -1,3 +1,7 @@
+:root{
+    --bodycolor: rgb(44, 43, 43);
+}
+
 header{
     position: relative;
     width: 1000px;
@@ -21,7 +25,7 @@ main{
 .skull{
     width:100px;
     height: 100px;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     border: 1px solid black;
 }
 .eyes{
@@ -57,7 +61,7 @@ main{
     height: 20px;
     border: 1px solid gray;
     border-radius: 50%;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
 }
 #rNostrile{
     position: relative;
@@ -67,7 +71,7 @@ main{
     height: 20px;
     border: 1px solid gray;
     border-radius: 50%;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     
 }
 #centerNose{
@@ -75,7 +79,7 @@ main{
     width: 15px;
     height: 40px;
     border: 1px solid gray;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     z-index: 1;
 }
 .mouth{
@@ -104,7 +108,7 @@ main{
     position: relative;
     width: 30px;
     height: inherit;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     border: 1px solid black;
 }
 .torso{
@@ -127,7 +131,7 @@ main{
     height: 40px;
     border: 1px solid   black;
     border-radius: 50%;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
 }
 #lShoulder{
     float: right;
@@ -137,7 +141,7 @@ main{
     clear:both;
     width:20px;
     height: 70px;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     border: 1px solid black;
     
 }
@@ -157,7 +161,7 @@ main{
     height: 30px;
     border: 1px solid   black;
     border-radius: 50%;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
 }
 #lElbow{
     left: 35px;
@@ -172,7 +176,7 @@ main{
     position: relative;
     width:15px;
     height: 70px;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     border: 1px solid black;
 }
 #lForarm{
@@ -187,7 +191,7 @@ main{
     position: relative;
     width: 125px;
     height: inherit;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     border: 1px solid black;
 }
 .chestLights{
@@ -256,7 +260,7 @@ main{
     position: relative;
     width: 30px;
     height: 30px;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
    
 }
 .lHand{
@@ -274,7 +278,7 @@ main{
 }
 #lQuad,#rQuad{
     position: relative;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     border: 1px solid black;
     height: 65px;
     width: 40px;
@@ -302,7 +306,7 @@ main{
     height: 40px;
     border: 1px solid   black;
     border-radius: 50%;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
 }
 .belowTheKnees{
     display: flex;
@@ -322,8 +326,31 @@ main{
 }
 #lCalf,#rCalf{
     position: relative;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--bodycolor);
     border: 1px solid black;
     height: 65px;
     width: 40px;
+}
+.feet{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    width: 100%;
+    height: 40px;
+}
+.Feet2{
+    position: relative;
+    width: 125px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+}
+#lFoot,#rFoot{
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: var(--bodycolor);
+    border: 1px solid black;
 }
