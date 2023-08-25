@@ -54,6 +54,9 @@ button{
     width: 800px;
     height: 120px;
     background-color: antiquewhite;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
 }
 .content{
     background-color: beige;

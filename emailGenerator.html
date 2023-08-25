@@ -19,7 +19,7 @@
                         <input type="text" id="firstname" name="firstname" required>
                         <label for="lastname">Lastname:</label>
                         <input type="text" id="lastname" name="lastname" required>
-                        <button class="submit" type="submit">Click to find out!</button>
+                        <button class="submit" type="button" onclick="sumbit()">Click to find out!</button>
                     </form>
                 </div>
                 <div class="emailAddress" id="emailAddress"></div>
@@ -29,4 +29,13 @@
         <footer></footer>
         
     </body>
+    <script>
+        
+        function submit() 
+        {
+             firstInitial= document.getElementById("firstname").value;
+             lastname= document.getElementById("lastname").value;
+            alert(firstInitial + "." + lastname +"@waketech.edu");
+        }
+    </script>
 </html>
