@@ -37,6 +37,7 @@ label,input{
     margin-left: 10px;
     width: 180px;
 }
+
 button{
     position: relative;
     left:10px;
@@ -57,6 +58,8 @@ button{
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     color: black;
+    text-align: center;
+    text-transform: lowercase;
 }
 .content{
     background-color: beige;

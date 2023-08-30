@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+                ticketPrice()
+            function ticketPrice(){
+                var yourAge= prompt("Enter your age"), yourName= prompt("Enter your name"), enteredName="", enteredAge="", requireAge= "13", adultTicketPrice="$35.00", youthTicketPrice="$10.00";
+
+                if(13<=enteredAge )
+                {
+                    let enteredAge=yourAge;
+                    let enteredName=yourName;
+                    alert(`${enteredName} your ticket price is ${adultTicketPrice}`)
+                }
+                else
+                {
+                    
+                    alert(`${enteredName} your ticket price is ${youthTicketPrice}`)
+                }
+            }
+
+        </script>
+    </body>
+</html>

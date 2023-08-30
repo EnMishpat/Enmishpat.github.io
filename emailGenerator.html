@@ -9,17 +9,17 @@
     </head>
     <body>
         <header >
-            Enter your name and find out what your Wake Tech Email address will be.
+            Enter your name and find out what your Wake Tech Email address is
         </header>
         <main>
             <div class="gotIt">
                 <div class="content">
-                    <form action="post">
+                    <form action="" >
                         <label for="firstname">Firstname:</label>
                         <input type="text" id="firstname" name="firstname" required>
-                        <label for="lastname">Lastname:</label>
-                        <input type="text" id="lastname" name="lastname" required>
-                        <button class="submit" type="button" onclick="sumbit()">Click to find out!</button>
+                        <label for="lastname" onclick="hello()">Lastname:</label>
+                        <input type="text" id="lastname" name="lastname" required >
+                        <button type="button" id="submit" onclick="hello()">Click here to find out!</button>
                     </form>
                 </div>
                 <div class="emailAddress" id="emailAddress"></div>
@@ -27,15 +27,23 @@
         </main>
         <nav></nav>
         <footer></footer>
+        <script>
         
+            function hello() 
+            {
+                
+                let firstName= document.getElementById("firstname").value;
+                let sirName= document.getElementById("lastname").value;
+                let firstInitial= firstName.charAt(0);
+                alert(firstInitial + "." + sirName +"@waketech.edu");
+                let emailAddressDiv= document.getElementById("emailAddress");
+                emailAddressDiv.textContent = firstInitial + "." + sirName +"@waketech.edu";
+            }
+        </script>
+        <noscript>
+            <h1>Well, as it seems you are unable to share the experiance that I prepared for you. You do not have JavaScript</h1>
+        </noscript>
     </body>
-    <script>
-        
-        function submit() 
-        {
-             firstInitial= document.getElementById("firstname").value;
-             lastname= document.getElementById("lastname").value;
-            alert(firstInitial + "." + lastname +"@waketech.edu");
-        }
-    </script>
+
+    
 </html>
