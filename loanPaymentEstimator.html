@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="creating a loan payment estimator using loops and conditions">
+        <meta charset="URF-8">
+        <link rel="stylesheet" href="loanPaymentEstimator.css">
+        <title>Loan Payment Estimator</title>
+        <script>
+            
+            
+            function amortizationCalculator()
+                {
+                   //initialize the values
+                    var openingBalance = parseFloat(document.getElementById("loanAmountInput").value),
+                        paymentAmount = parseFloat(document.getElementById("paymentAmountInput").value), 
+                        interestRate = parseFloat(document.getElementById("interestRateSelector").value); 
+                    //Loop over the values
+                    //print the start of the table  
+                    let paymentTableDivString= document.getElementById("paymentTable").innerHTML;
+                        paymentTableDivString="";
+                        paymentTableDivString += "<table>";
+                        paymentTableDivString +=`<tr><th>Instalment Number</th><th>Opening Balance</th><th>closing Balnce</th></tr>`;
+                    let monthlyInterestRate = (interestRate / 100) / 12;
+                    var currentBalance = openingBalance;
+                    //loop goes here
+                    //print the start of the table row
+                   while (currentBalance>= 0)
+                    {
+                        currentBalance -= paymentAmount; //making the payment
+                        let currentInterest = currentBalance * (monthlyInterestRate); //finding ther current interest
+                        //check to see if the interest if more than the payment 
+                        if (currentInterest>=paymentAmount)
+                        {
+                            alert("Please Consider Making a higher monthly payment. The interest payment is highter than you payment amount")
+                        }
+                        //add the current interst to the current balance
+                        let openingBalance = currentBalance + currentInterest;
+                        //increment the number of payments by 1
+                        //print a line in the table documnet a line of table 
+                        paymentTableDivString += `<tr><td>${openingBalance}</td><td>${paymentAmount}</td><td>${currentBalance}</td></tr>`;
+                        //print the end of the table row
+                        
+                    }
+                  
+                   document.getElementById("paymentTable").innerHTML = paymentTableDivString
+                   paymentTableDivString += "</table>"
+
+                }
+            
+           
+
+        </script>
+    </head>
+    <body>
+        <header>Want to Know Your Monthly Payment</header>
+        <main>
+            <div class="form" id="form">
+                <form class="entryForm" id="entryForm">
+                    <label id="firstNameLabel">First Name:</label>
+                    <input type="text" class="textInput" id="firstNameInput" required>
+                    <label id="lastNameLabel">Last Name:</label>
+                    <input type="text" class="textInput" id="lastNameInput" required>
+                    <label id="loanAmountLabel">Enter the amount you would like to apply for:</label>
+                    <input type="number" class="numberInput" id="loanAmountInput" required>
+                    <label id="interestRateLabel">Select your desired interest rate:</label>
+                    <select id="interestRateSelector" required>
+                        <option>5.725</option>
+                        <option>6.000</option>
+                        <option>6.275</option>
+                        <option>6.850</option>
+                        <option>7.125</option>
+                    </select>
+                    <label id="paymentAmountLable">Enter your Monthly payment</label>
+                    <input type="number" id="paymentAmountInput" class="numberInput" required>
+                    <button type="button" id="monthlyPaymentCalculate" onclick="amortizationCalculator()">Calculate</button>
+                </form>
+            </div>
+            <div id="paymentTable"></div>
+        </main>
+        <nav></nav>
+    </body>
+</html>
