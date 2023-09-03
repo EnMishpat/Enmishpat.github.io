@@ -30,7 +30,7 @@
                     let firstCounter = 1;
                         //setting the value for the second row in the table for loop
                     let secondCounter = 2; 
-
+                    var currentcy = "$";
                         //creating a variable to containe the monthly insterest rate from the yearly interest rate that was selected in the form
                     let monthlyInterestRate = (interestRate / 100) / 12;
 
@@ -40,7 +40,7 @@
                         //creating a variable to contain the closing aount after the 
                     let closingBalance = currentBalance - paymentAmount;
                     //print the start of the table row
-                    paymentTableDivString += `<tr><td>${firstCounter}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>0</td><td>${paymentAmount}</td><td>${closingBalance}</td></tr>`;
+                    paymentTableDivString += `<tr><td>${firstCounter}</td><td>${currentcy}${openingBalance}</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}0</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}${closingBalance}</td></tr>`;
                     //loop goes here
                     currentBalance = closingBalance;
                    while (currentBalance> 0)
@@ -74,19 +74,20 @@
                             {
                                 //setting a variable to hold the final payment amount
                                 let finalPayment = openingBalance + monthlyInterestPayment;
+                                let finalPaymentFormated = finalPayment.toFixed(2);
                                 //setting payment amount to show balance for final payment
-                                let paymentAmount = finalPayment;
-                                let principle = openingBalance;
-                                let closingBalance = 0;
+                                let paymentAmount = finalPayment.toFixed(2);
+                                let principle = openingBalance.toFixed(2);
+                                let closingBalance = "0.00";
                                 //setting variables for the clients name to be in the alert message 
                                 let clientsName = document.getElementById("firstNameInput").value + document.getElementById("lastNameInput").value;
-                                alert(`${clientsName} Your final payment with be on instalmet number ${instalmentNumber} with a total pay off of ${finalPayment}`)
+                                alert(`${clientsName} Your final payment with be on instalment number ${instalmentNumber} with a total payment of ${currentcy}${finalPaymentFormated}`)
                                  //print a line in the table documnet a line of table 
-                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>${monthlyInterestPayment}</td><td>${principle}</td><td>${closingBalance}</td></tr>`;
+                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${currentcy}${openingBalance}</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}${monthlyInterestPayment}</td><td>${currentcy}${principle}</td><td>${currentcy}${closingBalance}</td></tr>`;
                         break;
                             }
                         //print a line in the table documnet a line of table 
-                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>${monthlyInterestPayment}</td><td>${principle}</td><td>${closingBalance}</td></tr>`;
+                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${currentcy}${openingBalance}</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}${monthlyInterestPayment}</td><td>${currentcy}${principle}</td><td>${currentcy}${closingBalance}</td></tr>`;
                         
                         
                     }
@@ -120,7 +121,7 @@
                         <option>6.850</option>
                         <option>7.125</option>
                     </select>
-                    <label id="paymentAmountLable">Enter your Monthly payment</label>
+                    <label id="paymentAmountLable">Enter your Monthly payment:</label>
                     <input type="number" id="paymentAmountInput" class="numberInput" required>
                     <button type="button" id="monthlyPaymentCalculate" onclick="amortizationCalculator()">Calculate</button>
                 </form>
