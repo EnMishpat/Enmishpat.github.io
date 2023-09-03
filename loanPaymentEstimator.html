@@ -74,10 +74,13 @@
                             {
                                 //setting a variable to hold the final payment amount
                                 let finalPayment = openingBalance + monthlyInterestPayment;
+                                //setting payment amount to show balance for final payment
                                 let paymentAmount = finalPayment;
                                 let principle = openingBalance;
                                 let closingBalance = 0;
-                                alert(`Your final payment with be on instalmet number ${instalmentNumber} with a total pay off of ${finalPayment}`)
+                                //setting variables for the clients name to be in the alert message 
+                                let clientsName = document.getElementById("firstNameInput").value + document.getElementById("lastNameInput").value;
+                                alert(`${clientsName} Your final payment with be on instalmet number ${instalmentNumber} with a total pay off of ${finalPayment}`)
                                  //print a line in the table documnet a line of table 
                         paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>${monthlyInterestPayment}</td><td>${principle}</td><td>${closingBalance}</td></tr>`;
                         break;
