@@ -42,12 +42,13 @@
                     //print the start of the table row
                     paymentTableDivString += `<tr><td>${firstCounter}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>0</td><td>${paymentAmount}</td><td>${closingBalance}</td></tr>`;
                     //loop goes here
+                    currentBalance = closingBalance;
                    while (currentBalance> 0)
                     {
                         //increment the number of payments by 1
                         let instalmentNumber = secondCounter++;
                         //making the payment
-                        currentBalance -= paymentAmount; 
+                         
                         //finding ther current interest
                         let monthlyInterestPayment = parseFloat( currentBalance * (monthlyInterestRate)); 
                                           
@@ -58,12 +59,29 @@
                                      paymentTableDivString = "Sorry but you will never be able to pay off that loan with such a low payment. <br>Please increase the monthly payment to continue";
                                      break;
                                  }
-                        //add the current interst to the current balance
+                                 
+                            openingBalance=currentBalance;
+                            //add the current interst to the current balance
                         let principle = paymentAmount - monthlyInterestPayment;
+                                 
+                            closingBalance = currentBalance-principle;                    
+                            currentBalance -=principle;
 
-                        let closingBalance = "";                    
-                        let runningBalance = "";
-                            
+                            //creating a final payment variable
+                            var finalPayment = "";
+                            //when there is less than 1 dollar for the monthly payment alert the client on which payment and how much it will be
+                            if(currentBalance <1 && closingBalance<0)
+                            {
+                                //setting a variable to hold the final payment amount
+                                let finalPayment = openingBalance + monthlyInterestPayment;
+                                let paymentAmount = finalPayment;
+                                let principle = openingBalance;
+                                let closingBalance = 0;
+                                alert(`Your final payment with be on instalmet number ${instalmentNumber} with a total pay off of ${finalPayment}`)
+                                 //print a line in the table documnet a line of table 
+                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>${monthlyInterestPayment}</td><td>${principle}</td><td>${closingBalance}</td></tr>`;
+                        break;
+                            }
                         //print a line in the table documnet a line of table 
                         paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>${monthlyInterestPayment}</td><td>${principle}</td><td>${closingBalance}</td></tr>`;
                         
