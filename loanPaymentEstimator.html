@@ -17,34 +17,62 @@
                         interestRate = parseFloat(document.getElementById("interestRateSelector").value); 
                     //Loop over the values
                     //print the start of the table  
+                    //setting the location of the table to be printed on the web page in the div paymentTable
                     let paymentTableDivString= document.getElementById("paymentTable").innerHTML;
+                        //setting the variable to a empty string to add the html code to.
                         paymentTableDivString="";
-                        paymentTableDivString += "<table>";
-                        paymentTableDivString +=`<tr><th>Instalment Number</th><th>Opening Balance</th><th>closing Balnce</th></tr>`;
+                        //starting a the table in the paymentTable div
+                        paymentTableDivString += "<table id='paymentInfo'>";
+                        //creating the headings for the table data
+                        paymentTableDivString +=`<tr><th>Instalment Number</th><th>Opening Balance</th><th>Payment Amount</th><th>Monthly Interest</th><<th>Principle</th><th>closing Balnce</th></tr>`;
+                        
+                        //setting the first line counter to 1 for adding the initial loan amoutn and payment
+                    let firstCounter = 1;
+                        //setting the value for the second row in the table for loop
+                    let secondCounter = 2; 
+
+                        //creating a variable to containe the monthly insterest rate from the yearly interest rate that was selected in the form
                     let monthlyInterestRate = (interestRate / 100) / 12;
+
+                        //creating a variable to contain the current balance of the loan after the payment has been made
                     var currentBalance = openingBalance;
-                    //loop goes here
+
+                        //creating a variable to contain the closing aount after the 
+                    let closingBalance = currentBalance - paymentAmount;
                     //print the start of the table row
-                   while (currentBalance>= 0)
+                    paymentTableDivString += `<tr><td>${firstCounter}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>0</td><td>${paymentAmount}</td><td>${closingBalance}</td></tr>`;
+                    //loop goes here
+                   while (currentBalance> 0)
                     {
-                        currentBalance -= paymentAmount; //making the payment
-                        let currentInterest = currentBalance * (monthlyInterestRate); //finding ther current interest
-                        //check to see if the interest if more than the payment 
-                        if (currentInterest>=paymentAmount)
-                        {
-                            alert("Please Consider Making a higher monthly payment. The interest payment is highter than you payment amount")
-                        }
-                        //add the current interst to the current balance
-                        let openingBalance = currentBalance + currentInterest;
                         //increment the number of payments by 1
+                        let instalmentNumber = secondCounter++;
+                        //making the payment
+                        currentBalance -= paymentAmount; 
+                        //finding ther current interest
+                        let monthlyInterestPayment = parseFloat( currentBalance * (monthlyInterestRate)); 
+                                          
+                        //check to see if the interest if more than the payment
+                            if (monthlyInterestPayment>=paymentAmount)
+                                 {
+                                     alert("Please Consider Making a higher monthly payment. The interest payment is highter than you payment amount")
+                                     paymentTableDivString = "Sorry but you will never be able to pay off that loan with such a low payment. <br>Please increase the monthly payment to continue";
+                                     break;
+                                 }
+                        //add the current interst to the current balance
+                        let principle = paymentAmount - monthlyInterestPayment;
+
+                        let closingBalance = "";                    
+                        let runningBalance = "";
+                            
                         //print a line in the table documnet a line of table 
-                        paymentTableDivString += `<tr><td>${openingBalance}</td><td>${paymentAmount}</td><td>${currentBalance}</td></tr>`;
-                        //print the end of the table row
+                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${openingBalance}</td><td>${paymentAmount}</td><td>${monthlyInterestPayment}</td><td>${principle}</td><td>${closingBalance}</td></tr>`;
+                        
                         
                     }
-                  
-                   document.getElementById("paymentTable").innerHTML = paymentTableDivString
-                   paymentTableDivString += "</table>"
+                  //print the table to the div
+                   document.getElementById("paymentTable").innerHTML = paymentTableDivString;
+                   //print the end of the table row
+                   paymentTableDivString += "</table>";
 
                 }
             
