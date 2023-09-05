@@ -25,7 +25,7 @@
                         paymentTableDivString += "<table id='paymentInfo'>";
                         //creating the headings for the table data
                         paymentTableDivString +=`<tr><th>Instalment Number</th><th>Opening Balance</th><th>Payment Amount</th><th>Monthly Interest</th><<th>Principle</th><th>closing Balnce</th></tr>`;
-                        
+                    
                         //setting the first line counter to 1 for adding the initial loan amoutn and payment
                     let firstCounter = 1;
                         //setting the value for the second row in the table for loop
@@ -37,10 +37,13 @@
                         //creating a variable to contain the current balance of the loan after the payment has been made
                     var currentBalance = openingBalance;
 
+
                         //creating a variable to contain the closing aount after the 
                     let closingBalance = currentBalance - paymentAmount;
+                    let paymentAmountFormatted = paymentAmount.toFixed(2);
+                    
                     //print the start of the table row
-                    paymentTableDivString += `<tr><td>${firstCounter}</td><td>${currentcy}${openingBalance}</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}0</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}${closingBalance}</td></tr>`;
+                    paymentTableDivString += `<tr><td>${firstCounter}</td><td>${currentcy}${openingBalance}.00</td><td>${currentcy}${paymentAmount}.00</td><td>${currentcy}0.00</td><td>${currentcy}${paymentAmount}.00</td><td>${currentcy}${closingBalance}.00</td></tr>`;
                     //loop goes here
                     currentBalance = closingBalance;
                    while (currentBalance> 0)
@@ -64,9 +67,11 @@
                             //add the current interst to the current balance
                         let principle = paymentAmount - monthlyInterestPayment;
                                  
-                            closingBalance = currentBalance-principle;                    
-                            currentBalance -=principle;
-
+                            closingBalance = currentBalance-principle;    
+                        let closingBalanceFormatted = closingBalance.toFixed(2);                
+                            currentBalance -=principle.toFixed(2);
+                        let principleFormatted = principle.toFixed(2);
+                        let monthlyInterestPaymentFormatted = monthlyInterestPayment.toFixed(2);
                             //creating a final payment variable
                             var finalPayment = "";
                             //when there is less than 1 dollar for the monthly payment alert the client on which payment and how much it will be
@@ -74,22 +79,26 @@
                             {
                                 //setting a variable to hold the final payment amount
                                 let finalPayment = openingBalance + monthlyInterestPayment;
+                                //formatting final payment to two decimal places
                                 let finalPaymentFormated = finalPayment.toFixed(2);
+                                let openingBalanceFormatted = openingBalance.toFixed(2);
+                                let monthlyInterestPaymentFormatted = monthlyInterestPayment.toFixed(2);
                                 //setting payment amount to show balance for final payment
-                                let paymentAmount = finalPayment.toFixed(2);
+                                let paymentAmount = finalPaymentFormated;
                                 let principle = openingBalance.toFixed(2);
                                 let closingBalance = "0.00";
                                 //setting variables for the clients name to be in the alert message 
                                 let clientsName = document.getElementById("firstNameInput").value + document.getElementById("lastNameInput").value;
                                 alert(`${clientsName} Your final payment with be on instalment number ${instalmentNumber} with a total payment of ${currentcy}${finalPaymentFormated}`)
                                  //print a line in the table documnet a line of table 
-                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${currentcy}${openingBalance}</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}${monthlyInterestPayment}</td><td>${currentcy}${principle}</td><td>${currentcy}${closingBalance}</td></tr>`;
+                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${currentcy}${openingBalanceFormatted}</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}${monthlyInterestPaymentFormatted}</td><td>${currentcy}${principle}</td><td>${currentcy}${closingBalance}</td></tr>`;
                         break;
                             }
+                        let openingBalanceFormatted = openingBalance.toFixed(2);
                         //print a line in the table documnet a line of table 
-                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${currentcy}${openingBalance}</td><td>${currentcy}${paymentAmount}</td><td>${currentcy}${monthlyInterestPayment}</td><td>${currentcy}${principle}</td><td>${currentcy}${closingBalance}</td></tr>`;
+                        paymentTableDivString += `<tr><td>${instalmentNumber}</td><td>${currentcy}${openingBalanceFormatted}</td><td>${currentcy}${paymentAmountFormatted}</td><td>${currentcy}${monthlyInterestPaymentFormatted}</td><td>${currentcy}${principleFormatted}</td><td>${currentcy}${closingBalanceFormatted}</td></tr>`;
                         
-                        
+                    
                     }
                   //print the table to the div
                    document.getElementById("paymentTable").innerHTML = paymentTableDivString;
