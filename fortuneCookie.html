@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="description" content="this webpage is dedicated to telling you about your future. have fun with the wacky fortunes and add your our fortune too.">
+        <link rel="stylesheet" href="fortuneCookie.css">
+
+        <script>
+
+            let fortunes = [
+                "When you mess with the kittens, Your get the claws.",
+                "Today is a good day for an Array.",
+                "Your Story begins and ends with you, Make it count!",
+                "Those who let their dreams butn out loose their light.",
+                "An apple a day, makes your teeth rot away.",
+                "Seek first the Kingdom of God."
+            ];
+            function zoltan(){
+                let tellMyFortuneDivString= document.getElementById("tellMyFortune");
+                    
+                let zoltanFortune = Math.floor(Math.random()*fortunes.length);
+
+                    tellMyFortuneDivString.innerText = fortunes[zoltanFortune];
+               
+                    
+                
+            }
+        </script>
+        <noscript>
+            To bad you cant play. Try downloading JavaScript
+        </noscript>
+    </head>
+    <body>
+        <header>Always Let Your fortune Be your Guide</header>
+        <main>
+            <div id="clickBait">
+                <button type="button" id="fortuneButton" onclick="zoltan()">Click Here to Learn Your Fortune</button>
+            </div>
+            <div id="tellMyFortune"></div>
+        </main>
+        <nav></nav>
+        <footer></footer>
+    </body>
+</html>
