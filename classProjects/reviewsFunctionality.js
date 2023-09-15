@@ -9,28 +9,28 @@ const reviews = [
     },
     {
       name: "Sarah Thompson",
-      rating: 5,
+      rating: 4,
       image: "C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\pexels-criativithy-1821095.jpg",
       timeUsed:"Used for 3 days",
       review: "Only three days and I'm sold! At first, I chuckled at the name - Fluffernutter Whizbang? But the results? Absolutely no joke. My mornings have been transformed. Thank you, www.FunkyFluffernutterWhizbang.com for this little miracle!",
     },
     {
       name: "Jake Miller",
-      rating: 5,
+      rating: 3,
       image: "C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\pexels-bruno-salvadori-2269872.jpg",
       timeUsed:"Used for 2 Months",
       review: "It's been two months with my Fluffernutter Whizbang, and honestly, I can't remember life before it. It's that essential. The name might sound silly, but the benefits are profoundly serious. www.FunkyFluffernutterWhizbang.com, you've got a lifelong customer!",
     },
     {
       name: "Emily Roberts",
-      rating: 5,
+      rating: 2,
       image: "C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\pexels-andrea-piacquadio-3779760.jpg",
       timeUsed:"Used for 6 Hours",
       review: "Okay, so I've only had the Fluffernutter Whizbang for a few hours, but I HAD to leave a review. It's already making waves in my day-to-day routine. If you haven't been to www.FunkyFluffernutterWhizbang.com yet, you're missing out. Big time.",
     },
     {
       name: "Chris Johnson",
-      rating: 5,
+      rating: 1,
       image: "C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\pexels-kelvin-frança-3242038.jpg",
       timeUsed:"Used for 1 Year",
       review: "A full year with the Fluffernutter Whizbang and every day feels like the first! Whenever someone asks me about the secret to my happiness, I just point them to www.FunkyFluffernutterWhizbang.com. This product is the epitome of 'Don't judge a book by its cover' (or name)!",
@@ -69,9 +69,17 @@ function loadReviews(person){
   const reviewsData = reviews[person];
   img.src = reviewsData.image;
   author.textcontent = reviewsData.name;
-  rating.textContent = reviewsData.rating;
+  //rating.innerText = reviewsData.rating;
   timeUsed.textContent = reviewsData.timeUsed;
   reviewInfo.textContent = reviewsData.review;
+  let fillStar = "<img src=\"C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\star-fill.svg\" alt=\"\">"
+  let emptyStar = "<img src=\"C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\star.svg\" alt=\"\">";
+  rating.innerHTML = "";
+
+  for(star=0; star<reviewsData.rating; star++){
+    rating.innerHTML += fillStar;
+    
+  };
 
 }; 
 
@@ -79,7 +87,7 @@ function loadReviews(person){
 
 nextBtn.addEventListener('click', function(){
   currentIndex++;
-  if(currentIndex > reviews.length-1){
+  if(currentIndex > reviews.length){
     currentIndex = 0; 
   }
   loadReviews(currentIndex);
@@ -99,3 +107,6 @@ randomBtn.addEventListener('click', function(){
   currentIndex = Math.floor(Math.random()* reviews.length);
   loadReviews(currentIndex);
 })
+
+//adding stars to rating
+//function ratingStars(){}
