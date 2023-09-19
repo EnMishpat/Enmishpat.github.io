@@ -72,8 +72,8 @@ function loadReviews(person){
   //rating.innerText = reviewsData.rating;
   timeUsed.textContent = reviewsData.timeUsed;
   reviewInfo.textContent = reviewsData.review;
-  let fillStar = "<img src=\"C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\star-fill.svg\" alt=\"\">"
-  let emptyStar = "<img src=\"C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\star.svg\" alt=\"\">";
+  let fillStar = "<img class=\"fillStar\" src=\"C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\star-fill.svg\" alt=\"\">"
+  let emptyStar = "<img class=\"emptyStar\" src=\"C:\\Users\\zgfon\\OneDrive\\Desktop\\GitHub Repositorys\\Enmishpat.github.io\\classProjects\\reviewsImages\\star.svg\" alt=\"\">";
   rating.innerHTML = "";
 
   for(star=0; star<reviewsData.rating; star++){

@@ -15,16 +15,28 @@ article{
     flex-direction: column;
     -ms-flex-align: center;
     position: relative;
-    height: 100%;
-    width: 1000px;
+    height: 500px;
+    width: 800px;
     margin: 0 auto;
     background-color: aquamarine;
 }
 img{
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
+    border-radius: 30%;
+}
+.fillStar{
+    color: yellow;
+    height: 30px;
+    width: 30px;
 }
 .title{
     width: 1000px;
     margin: 0 auto;
+}
+body{
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: azure;
 }
