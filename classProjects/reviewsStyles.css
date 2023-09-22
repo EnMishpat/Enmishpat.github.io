@@ -26,9 +26,14 @@ img{
     border-radius: 30%;
 }
 .fillStar{
-    color: yellow;
     height: 30px;
     width: 30px;
+}
+#rating{
+    color: yellow;
+    width: fit-content;
+    height: 33px;
+    background-color: azure;
 }
 .title{
     width: 1000px;

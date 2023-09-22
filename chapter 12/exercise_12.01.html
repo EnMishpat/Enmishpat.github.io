@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 12.01: Creating a Custom Element</title>
+    </head>
+    <body>
+        <main class="blog-posts">
+            <article>
+                <!-- add main-headline here-->
+                <blog-headline />
+            </article>
+            <script>
+                //register blog-headline
+                class BlogHeadline extends HTMLElement{}
+                window.customElements.define("blog-headline")
+            </script>
+        </main>
+    </body>
+</html>
