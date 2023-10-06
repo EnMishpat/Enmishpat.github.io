@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>Date Calculator</title>
+        
+    </head>
+    <body>
+        <form>
+            <fieldset>
+            <legend>Enter Two Dates</legend>
+            <label>Select First Date</label>
+            <input type="date" id="firstDate">
+            <label>Select Second Date</label>
+            <input type="date" id="secondDate">
+            <button type="button" onclick="showDates()">Calculate</button>
+            
+            </fieldset>
+            <div class="calculations">
+            <h3>Number of Years between those dates</h3>
+            <p id="years"></p>
+            <h3>Number of Months between those dates</h3>
+            <p id="months"></p>
+            <h3>Number of days between those days</h3>
+            <p id="days"></p>
+            </div>
+        
+            <script src="dateCalculator.js"></script></form>
+    </body>
+</html>
