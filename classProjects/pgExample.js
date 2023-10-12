@@ -1,6 +1,6 @@
-const {Pool} = required('pg');
+const {Pool} = require('pg');
 const connectionInfo = `postgres://mywebappuser:newuser@localhost:5432/mywebapp`;
-const pool = new pool({connectionString: connectionInfo});
+const pool = new Pool({connectionString: connectionInfo});
 
 
 pool.query(
