@@ -17,17 +17,19 @@ function getBowlerData(){
                 console.log(err);
             }
             // this is where you will add new code
+            debugger;
             result.rows.forEach(function(bowler){
-                let overAllAvg = (bowler.accuracy + bowler.power + bowler.consistency) /3;
-                let overAllRating = Math.round(overAllAvg);
-                console.log (`Bowler Name: ${bolwer.firstName} ${bowler.lastName}`);
-                console.log (`Bowler Overall: ${overAllRating}`);
+                let overallAvg = (bowler.accuracy + bowler.power + bowler.consistency) /3;
+                let overallRating = Math.round(overallAvg);
+                console.log (`Bowler Name: ${bowler.firstname} ${bowler.lastname}`);
+                console.log (`Bowler Overall: ${overallRating}`);
             });
         }
     );
 };
 
 router.get('/', function(req, res){
+    getBowlerData();
     res.sendFile(path.join(__dirname, 'index.html'))
 });
 app.use('/', router);
